@@ -1,0 +1,54 @@
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: top;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-image: url("Image.jpg"); /* Specify the path to your background image */
+  background-repeat: no-repeat;
+  background-size: 100% 100%; /* Adjust the background image size */
+}
+.form {
+  text-align: top;
+}
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+.search {
+  display: flex;
+  flex-direction: row;
+}
+.search-input {
+  width: 500px; /* Adjust the width as needed */
+  height: 40px; /* Adjust the height as needed */
+  font-size: 25px; /* Adjust the font size as needed */
+}
+.search-results {
+  border: 3px solid #ccc;
+  border-radius: 10px;
+  height: 300px;
+  margin: 0.9rem auto 3rem;
+  overflow: auto;
+  padding: 10px;
+  position: relative;
+  width: 900px;
+  background-color: white;
+}
+.search-label {
+  font-size: xx-large;
+  color: rgb(29, 249, 29);
+}
+.submit-button {
+  width: 150px; /* Adjust the width as needed */
+  height: 40px; /* Adjust the height as needed */
+  font-size: 16px; /* Adjust the font size as needed */
+  margin-top: 2px;
+  margin-left: 15px;
+}
+h1 {
+  color: yellow;
+  text-align: center;
+}
