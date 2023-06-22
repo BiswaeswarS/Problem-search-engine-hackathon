@@ -83,14 +83,14 @@ def calculate_sorted_order_of_documents(query_terms):
             print("No matching question found. Please search with more relevant terms.")
     for document_index in potential_documents:
         p=int(document_index)
-        filename = 'Leetcode Question Scrapper/Qdata/'+str(p)+'/'+str(p)+'.txt'
+        filename = 'Leetcode Question scrapper/Qdata/'+str(p)+'/'+str(p)+'.txt'
 
         '''with open(filename, 'r', encoding=my_encoding) as f:
             k = f.readlines()
             for f in k:
                 print(f)'''
 
-        with open("Leetcode Question Scrapper/Qindex.txt", "r") as f:
+        with open("Leetcode Question scrapper/Qindex.txt", "r") as f:
             k=f.readlines()
             ##print(f"Problem link : {k[p-1]} Score: {potential_documents[document_index]}")
             temp={"Question Link": k[p - 1][:-2], "Score": potential_documents[document_index]}
