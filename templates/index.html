@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Search Page</title>
+  <link rel="stylesheet" href= "{{ url_for('static',filename='style.css') }}">
+</head>
+<body>
+  <h1>CODEFINDER</h1>
+  <div class="form">
+    <form method="POST">
+      {{ form.hidden_tag() }} 
+      <div class="form-group">
+        <label for="search-input" class="search-label">Enter your search term:</label>
+        <div class="search">
+          {{ form.search(class_="search-input") }} {{ form.submit(class_="submit-button") }}
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="search-results">
+    {% for result in results %}
+    <a href="{{ result['Question Link'] }}">{{ result['Question Link'] }}</a>
+    <p>Score: {{ result['Score'] }}</p>
+    {% endfor %}
+  </div>
+</body>
+</html>
