@@ -1,16 +1,10 @@
 from flask import Flask, jsonify
 import math
-import chardet
 from flask import Flask, render_template, request, jsonify
 from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField
 
 
-def find_encoding(fname):
-    r_file = open(fname, 'rb').read()
-    result = chardet.detect(r_file)
-    charenc = result['encoding']
-    return charenc
 def load_vocab():
     vocab = {}
     with open('tf-idf/vocab.txt', 'r') as f:
@@ -90,7 +84,6 @@ def calculate_sorted_order_of_documents(query_terms):
     for document_index in potential_documents:
         p=int(document_index)
         filename = 'Leetcode Question Scrapper/Qdata/'+str(p)+'/'+str(p)+'.txt'
-        my_encoding=find_encoding(filename)
 
         '''with open(filename, 'r', encoding=my_encoding) as f:
             k = f.readlines()
