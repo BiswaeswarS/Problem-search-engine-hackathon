@@ -26,7 +26,7 @@ def preprocess(document_text):
     # extract all the words from a document
     words=[]
     for index,lines in enumerate(document_text):
-        lines.lower()
+        lines=lines.lower()
         word = re.findall(r'\b[A-Za-z]+\b',lines)
         words.extend(word)
     return words
@@ -34,6 +34,7 @@ vocab = {}
 documents = []
 for index, doc in enumerate(data):
     # read statement and add it to the line and then preprocess
+
     tokens = preprocess(doc)
     documents.append(tokens)
     tokens = set(tokens)
@@ -69,7 +70,6 @@ for index, document in enumerate(documents):
             inverted_index[token] = [index]
         else:
             inverted_index[token].append(index)
-
 # save the inverted index in a text file
 with open('tf-idf/inverted-index.txt', 'w') as f:
     for key in inverted_index.keys():
