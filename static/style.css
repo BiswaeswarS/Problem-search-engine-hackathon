@@ -54,6 +54,7 @@ h1 {
   font-size: 16px; /* Adjust the font size as needed */
   margin-top: 2px;
   margin-left: 15px;
+  border-radius: 10px;
 }
 .submit-button p {
   margin: 0; /* Remove any default margins on the <p> element inside the button */
