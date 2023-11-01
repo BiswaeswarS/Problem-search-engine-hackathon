@@ -3,12 +3,28 @@ body {
   flex-direction: column;
   justify-content: top;
   align-items: center;
-  height: 100vh;
-  margin: 0;
   font-family: Arial, sans-serif;
-  background-image: url("Image.jpg"); /* Specify the path to your background image */
-  background-repeat: no-repeat;
-  background-size: 100% 100%; /* Adjust the background image size */
+  background-color: black;
+}
+@keyframes textGlow {
+  0% { color: lightgreen; text-shadow: 0 0 10px lightgreen; }
+  25% { color: lightcoral; text-shadow: 0 0 20px lightcoral; }
+  50% { color: lightblue; text-shadow: 0 0 30px lightblue; }
+  75% { color: lightpink; text-shadow: 0 0 40px lightpink; }
+  100% { color: lightslategray; text-shadow: 0 0 50px lightslategray; }
+}
+h1 {
+  font-family: cursive;
+  animation: textGlow 4s infinite alternate; /* 4s animation duration, infinite and alternate animation */
+  font-size: 45px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-top: 40px;
+}
+.description {
+  font-style: italic;
+  color: lightyellow;
+  font-size: 20px;
 }
 .form {
   text-align: top;
@@ -26,17 +42,6 @@ body {
   height: 40px; /* Adjust the height as needed */
   font-size: 25px; /* Adjust the font size as needed */
 }
-.search-results {
-  border: 3px solid #ccc;
-  border-radius: 10px;
-  height: 300px;
-  margin: 0.9rem auto 3rem;
-  overflow: auto;
-  padding: 10px;
-  position: relative;
-  width: 900px;
-  background-color: white;
-}
 .search-label {
   font-size: xx-large;
   color: rgb(29, 249, 29);
@@ -48,7 +53,57 @@ body {
   margin-top: 2px;
   margin-left: 15px;
 }
-h1 {
-  color: yellow;
-  text-align: center;
+.submit-button p {
+  margin: 0; /* Remove any default margins on the <p> element inside the button */
 }
+.submit-button:hover {
+  background-color: #00CC00;
+  box-shadow: 0 0 10px #00CC00;
+  cursor: pointer;
+}
+.search-results p {
+  border: 1px solid #ccc;
+  padding: 15px;
+  text-align: center;
+  background-color: black;
+  display: block;
+  opacity: 0;
+  animation: fadeIn 0.5s ease-in-out forwards;
+  font-size: 24px;
+  font-family: cursive;
+  width: 700px;
+  cursor: pointer;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  color: white;
+  border: 1px solid grey;
+}
+
+/* Keyframes for the fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Style the "Hello" text within the buttons */
+.search-results .text-result {
+  color: white;
+  font-weight: bold;
+}
+
+/* Add a box-shadow to make the buttons glow on hover */
+.search-results p:hover {
+  background-color: grey; /* Change the background color to grey on hover */
+  box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.7); /* Add a glowing effect */
+}
+
+/* Remove the underlines from the links */
+.search-results a {
+  text-decoration: none;
+  color: inherit;
+}
+
+

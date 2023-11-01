@@ -6,21 +6,23 @@
 </head>
 <body>
   <h1>CODEFINDER</h1>
+  <p class="description">Use this search engine to quickly find code and enhance programming skills. Happy Coding!!</p>
   <div class="form">
     <form method="POST">
       {{ form.hidden_tag() }} 
       <div class="form-group">
-        <label for="search-input" class="search-label">Enter your search term:</label>
         <div class="search">
-          {{ form.search(class_="search-input") }} {{ form.submit(class_="submit-button") }}
+          <input type="text" name="search" id="search-input" class="search-input" placeholder="Enter your search term">
+          {{ form.submit(class_="submit-button") }}
         </div>
       </div>
     </form>
   </div>
   <div class="search-results">
     {% for result in results %}
-    <a href="{{ result['Question Link'] }}">{{ result['Question Link'] }}</a>
-    <p>Score: {{ result['Score'] }}</p>
+      <p>
+        <a href="{{ result['Question Link'] }}"><span class="text-result">{{ result['Title'] }}</span></a><br>
+      </p>
     {% endfor %}
   </div>
 </body>

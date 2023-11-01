@@ -89,15 +89,15 @@ def calculate_sorted_order_of_documents(query_terms):
             k = f.readlines()
             for f in k:
                 print(f)'''
-
+        with open("Leetcode Question scrapper/index.txt", "r") as g:
+            t=g.readlines()
         with open("Leetcode Question scrapper/Qindex.txt", "r") as f:
             k=f.readlines()
             ##print(f"Problem link : {k[p-1]} Score: {potential_documents[document_index]}")
-            temp={"Question Link": k[p - 1][:-2], "Score": potential_documents[document_index]}
+            temp={"Question Link": k[p - 1][:-2], "Title": t[p-1]}
             if temp not in ans:
                 ans.append(temp)
     return ans
-
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'your-secret-key'
 
