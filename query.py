@@ -89,7 +89,7 @@ def calculate_sorted_order_of_documents(query_terms):
             k = f.readlines()
             for f in k:
                 print(f)'''
-        with open("Leetcode Question scrapper/index.txt", "r") as g:
+        with open("Leetcode Question scrapper/index.txt", "r",encoding="iso-8859-1") as g:
             t=g.readlines()
         with open("Leetcode Question scrapper/Qindex.txt", "r") as f:
             k=f.readlines()
