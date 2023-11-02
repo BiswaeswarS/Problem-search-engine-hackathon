@@ -84,11 +84,6 @@ def calculate_sorted_order_of_documents(query_terms):
     for document_index in potential_documents:
         p=int(document_index)
         filename = 'Leetcode Question scrapper/Qdata/'+str(p)+'/'+str(p)+'.txt'
-
-        '''with open(filename, 'r', encoding=my_encoding) as f:
-            k = f.readlines()
-            for f in k:
-                print(f)'''
         with open("Leetcode Question scrapper/index.txt", "r",encoding="iso-8859-1") as g:
             t=g.readlines()
         with open("Leetcode Question scrapper/Qindex.txt", "r") as f:
@@ -98,9 +93,10 @@ def calculate_sorted_order_of_documents(query_terms):
             if temp not in ans:
                 ans.append(temp)
     return ans
+##gg="allone".strip().split()
+##print(len(calculate_sorted_order_of_documents(gg)))
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'your-secret-key'
-
 class SearchForm(FlaskForm):
     search = StringField('Enter your search term')
     submit = SubmitField('Search')
